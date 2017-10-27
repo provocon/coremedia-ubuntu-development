@@ -27,6 +27,11 @@ Install python on your node since otherwise ansible will not start.
 
 The recipes in here also need a pre-installed ohai.
 
+```
+apt-get install python
+apt-get install ohai
+```
+
 Configure relevant hosts in `inventory.properties` or your global ansible hosts 
 file (if you haven't done so).
 
