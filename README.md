@@ -65,8 +65,8 @@ for hosts in role `cmdev` .
 Please use the [issues][issues] section of this repository at [github][github] 
 for feedback. 
 
-[issues]: https://github.com/provocon/coremedia-centos-development/issues
+[issues]: https://github.com/provocon/coremedia-ubuntu-development/issues
 [sencha]: https://www.sencha.com/products/extjs/cmd-download/
 [coremedia]: http://www.coremedia.com/
-[github]: https://github.com/provocon/coremedia-centos-development
-[gitlab]: https://gitlab.com/provocon/coremedia-centos-development
+[github]: https://github.com/provocon/coremedia-ubuntu-development
+[gitlab]: https://gitlab.com/provocon/coremedia-ubuntu-development
