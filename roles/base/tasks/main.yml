@@ -14,20 +14,6 @@
 # limitations under the License.
 #
 
-#- name: Upgrade all packages
-#  apt: name=* state=latest
-    
-#  
-#- name: Prepare firewall
-#  shell: firewall-cmd --zone=public --add-port={{item}}/tcp --permanent
-#  with_items: 
-#    - 40080
-#    - 40180
-#    - 40183
-#    - 80
-#    - 443
-#    - 22
-
 - name: Force usage of key for MongoDB
   shell: "apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6"
 
@@ -42,7 +28,7 @@
 - name: Install unzip
   apt: name=unzip update_cache=yes
 
-- include: chef.yml
+- name: Install mod jk for studio
+  apt: name=libapache2-mod-jk update_cache=yes
 
-# Done by CM deployment
-# echo "deb [ arch=amd64,arm64 ] http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.4.list
+- include: chef.yml
