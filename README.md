@@ -50,6 +50,7 @@ ansible-playbook -i inventory.properties setup.yml
 This playbook provides:
 
 * Java 8 
+* mod_jk for Apache httpd
 
 for hosts in role `coremedia`, and
 
@@ -60,6 +61,12 @@ for hosts in role `coremedia`, and
 for hosts in role `cmdev` .
 
 
+## Deployment of the System to Ubuntu
+
+To deploy CoreMedia CMS-9 to Ubuntu based systems you will need to apply the
+patches provided in this workspace to the chef scripts in your workspace.
+
+
 ## Feedback
 
 Please use the [issues][issues] section of this repository at [github][github] 
@@ -67,6 +74,6 @@ for feedback.
 
 [issues]: https://github.com/provocon/coremedia-ubuntu-development/issues
 [sencha]: https://www.sencha.com/products/extjs/cmd-download/
-[coremedia]: http://www.coremedia.com/
+[coremedia]: https://www.coremedia.com/
 [github]: https://github.com/provocon/coremedia-ubuntu-development
 [gitlab]: https://gitlab.com/provocon/coremedia-ubuntu-development
