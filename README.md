@@ -63,8 +63,14 @@ for hosts in role `cmdev` .
 
 ## Deployment of the System to Ubuntu
 
-To deploy CoreMedia CMS-9 to Ubuntu based systems you will need to apply the
+To deploy CoreMedia CMS-9 to Ubuntu based systems, you will need to apply the
 patches provided in this workspace to the chef scripts in your workspace.
+
+### Known Issues Elsewhere
+
+It might be, that you will need to use AJP not only for the Studio as indicated 
+in the patches but also for the preview. This was not the case for the 1710
+workspace but for a customized 1707 one.
 
 
 ## Feedback
