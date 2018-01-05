@@ -1,10 +1,14 @@
-# Generic Ansible Playbook to Prepare Ubuntu Boxes for CoreMedia
+# Patches and Ansible Playbook to Prepare Ubuntu Boxes for CoreMedia
 
 `coremedia-ubuntu-development`
 
-This playbook is intended for preparation of CI nodes and other hosts, which 
-need to be able to build [CoreMedia][coremedia] workspaces for CoreMedia CMS 9 
-or LiveContext 3 without any other installation steps necessary.
+The patches in this workspace are prepared to patch a 1710 CMS-9 workspaces
+to be deployable as a single node configuration on a Ubuntu based host.
+
+The playbook in this repository is intended for preparation of CI nodes and 
+other hosts, which need to be able to build [CoreMedia][coremedia] workspaces 
+for CoreMedia CMS 9 or LiveContext 3 without any other installation steps 
+necessary.
 
 Find mirrors of this repository at [gitlab][gitlab] and [github][github].
 
