@@ -70,12 +70,18 @@ for hosts in role `cmdev` .
 To deploy CoreMedia CMS-9 to Ubuntu based systems, you will need to apply the
 patches provided in this workspace to the chef scripts in your workspace.
 
-### Known Issues Elsewhere
+### AJP Usage
 
-It might be, that you will need to use AJP not only for the Studio as indicated 
-in the patches but also for the preview. This was not the case for the 1710
-workspace but for a customized 1707 one.
+The usage of AJP is not strictly necessary, but the ability to configure the protocol
+in use might still help.
 
+We worked around the fact that hosts directly connected to the internet use an
+IP-Address that is not on the default list of Apache Tomcat's
+
+[RemoteIpValve](https://tomcat.apache.org/tomcat-7.0-doc/api/org/apache/catalina/valves/RemoteIpValve.html)
+
+Alternatively you could also change the default in `conf/server.tml` during
+deployment.
 
 ## Feedback
 
