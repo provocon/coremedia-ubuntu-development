@@ -28,6 +28,7 @@
 
 - name: Remove broken SenchaCMD from bashrc
   shell: "grep -v export.PATH.*sencha.* ~/.bashrc > ~/.brc ; cat ~/.brc > ~/.bashrc ; rm -f ~/.brc"
+  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
 - name: Create SenchaCMD repository
   file: path={{ senchacmd_home_parent_directory }}/sencha/repo state=directory mode=0777

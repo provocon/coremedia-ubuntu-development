@@ -14,11 +14,17 @@
 # limitations under the License.
 #
 
-#- name: Install FreeType
-#  yum: name=freetype update_cache=yes
-#
-#- name: Install FontConfig
-#  yum: name=fontconfig update_cache=yes
+- name: Install FreeType
+  yum: name=freetype update_cache=yes
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+
+- name: Install FontConfig
+  yum: name=fontconfig update_cache=yes
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+
+- name: Install bzip2
+  yum: name=bzip2 update_cache=yes
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
 
 - name: Extract PhantomJS
   unarchive:
