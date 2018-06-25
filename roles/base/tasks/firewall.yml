@@ -1,5 +1,5 @@
 #
-# Copyright 2017-2018 Martin Goellnitz.
+# Copyright 2018 Martin Goellnitz.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,16 +14,17 @@
 # limitations under the License.
 #
 
-- name: Force usage of key for MongoDB
-  shell: "apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6"
+# Firewall Daemon - Already present at CentOS
+- name: Install FirewallD
+  apt: name=firewalld update_cache=yes
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
-- include: firewall.yml
-
-- include: java.yml
-
-# Unzip
-- name: Install unzip
-  package: name=unzip update_cache=yes
-
-- include: chef.yml
+- name: Prepare firewall
+  shell: firewall-cmd --zone=public --add-port={{item}}/tcp --permanent
+  with_items: 
+    - 40080
+    - 40180
+    - 40183
+    - 80
+    - 443
+    - 22

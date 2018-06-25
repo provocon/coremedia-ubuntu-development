@@ -1,5 +1,5 @@
 #
-# Copyright 2017-2018 Martin Goellnitz.
+# Copyright 2017 Martin Goellnitz.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,17 +13,5 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
-- name: Force usage of key for MongoDB
-  shell: "apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6"
-  when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
-
-- include: firewall.yml
-
-- include: java.yml
-
-# Unzip
-- name: Install unzip
-  package: name=unzip update_cache=yes
-
-- include: chef.yml
+export JAVA_HOME=/etc/alternatives/java_sdk
+PATH=$JAVA_HOME/bin:$PATH
