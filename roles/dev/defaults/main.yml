@@ -1,5 +1,5 @@
 #
-# Copyright 2017 Martin Goellnitz.
+# Copyright 2017-2019 Martin Goellnitz.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -24,6 +24,6 @@ phantomjs_version: 2.1.1
 phantomjs_home_parent_directory: /opt
 
 # defaults for SenchaCMD
-senchacmd_version: 6.2.2
-senchacmd_long_version: 6.2.2.36
+senchacmd_version: 6.5.3.6
+senchacmd_long_version: 6.5.3.6
 senchacmd_home_parent_directory: /opt
