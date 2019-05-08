@@ -1,5 +1,5 @@
 #
-# Copyright 2017 Martin Goellnitz.
+# Copyright 2017-2019 Martin Goellnitz.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,4 +15,4 @@
 #
 
 # defaults for chef
-chef_version: 12.21.12
+chef_version: 12.8.1

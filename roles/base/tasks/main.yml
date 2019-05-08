@@ -1,5 +1,5 @@
 #
-# Copyright 2017-2018 Martin Goellnitz.
+# Copyright 2017-2019 Martin Goellnitz.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,10 +14,14 @@
 # limitations under the License.
 #
 
-- name: Force usage of key for MongoDB
+- name: Force usage of key for MongoDB on Debian/Ubuntu
   shell: "apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 0C49F3730359A14518585931BC711F9BA15703C6"
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
+#- name: Upgrade all packages on CentOS/RedHat
+#  yum: name=* state=latest
+#  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+  
 - include: firewall.yml
 
 - include: java.yml
@@ -27,3 +31,13 @@
   package: name=unzip update_cache=yes
 
 - include: chef.yml
+
+# Make sure mariadb is not installed
+- name: Uninstall MariaDB package from CentOS/RedHat
+  yum: name={{ item }} state=absent update_cache=yes
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+  with_items:
+   - mariadb-server
+   - mariadb-common
+   - mariadb-config
+  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'

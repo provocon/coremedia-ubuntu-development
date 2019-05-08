@@ -1,5 +1,5 @@
 #
-# Copyright 2017 Martin Goellnitz.
+# Copyright 2017-2019 Martin Goellnitz.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,6 +14,17 @@
 # limitations under the License.
 #
 
+# Convenience stuff
+- name: Install zip
+  package: name=zip update_cache=yes
+
+- name: Install p7zip-full
+  package: name=p7zip-full update_cache=yes
+
+- name: Install sudo
+  package: name=p7zip-full update_cache=yes
+
+# Documented requirements
 - include: maven.yml
 - include: phantomjs.yml
 - include: senchacmd.yml

@@ -1,5 +1,4 @@
-
-# Copyright 2017-2018 Martin Goellnitz.
+# Copyright 2017-2019 Martin Goellnitz.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,7 +17,7 @@
   apt: name=openjdk-8-jdk update_cache=yes
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
-- name: Java path configuration
+- name: Java path configuration for Debian/Ubuntu
   template: src=java_deb.sh dest=/etc/profile.d/java.sh
   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
@@ -26,6 +25,6 @@
   yum: name=java-1.8.0-openjdk-devel update_cache=yes
   when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
 
-- name: Java path configuration
+- name: Java path configuration for CentOS/RedHat
   template: src=java_rpm.sh dest=/etc/profile.d/java.sh
   when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
